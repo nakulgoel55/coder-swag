@@ -14,15 +14,12 @@ class CategoryCell: UITableViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryTitle: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // Because we created Category, we only have to pass in one object, or else we would have to pass title and imageName seperately
+    // This function easily updates the views
+    func updateViews(category: Category){
+        categoryImage.image = UIImage(named: category.imageName)
+        
+        
     }
 
 }
